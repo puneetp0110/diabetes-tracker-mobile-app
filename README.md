@@ -74,7 +74,7 @@ Alexa: “Alright, I’ll remind you again later to make entries.”
 
 ## Getting Started
 
-1. Clone this repo, `git@github.com:puneetp0110/diabetesApp.git`
+1. Clone this repo, `git@github.com:puneetp0110/diabetes-tracker-mobile-app.git`
 
 2. Run `yarn` or `npm install` to install dependencies
 
