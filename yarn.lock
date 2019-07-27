@@ -5524,6 +5524,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-avs@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-avs/-/react-native-avs-1.0.2.tgz#1ea8de21bd2e2688477556a5b89b214e6dfd53f6"
+  integrity sha1-HqjeIb0uJohHdValuJshTm39U/Y=
+
 react-native-gesture-handler@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.3.0.tgz#d0386f565928ccc1849537f03f2e37fd5f6ad43f"
@@ -5532,11 +5537,6 @@ react-native-gesture-handler@^1.1.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
-
-react-native-login-with-amazon@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/react-native-login-with-amazon/-/react-native-login-with-amazon-1.1.8.tgz#92e490400dccabcaed91448169612aee32d9c8ad"
-  integrity sha512-mi2JIWDbXevty5Sdj6qkkgk9QEvpD8m75jEQrkw/hak0e8YlfSTGlqVurFlGaPdPcF8KLx4o+JO5/wXIV0RZHQ==
 
 react-native-safe-area-view@^0.14.1:
   version "0.14.6"
