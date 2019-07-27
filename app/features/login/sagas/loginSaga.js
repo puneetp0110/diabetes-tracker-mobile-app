@@ -5,7 +5,7 @@
  * pwd - password
  */
 import { put, call } from 'redux-saga/effects';
-import { delay } from 'redux-saga';
+import {delay} from 'redux-saga/effects';
 
 import { Alert } from 'react-native';
 // import loginUser from 'app/api/methods/loginUser';

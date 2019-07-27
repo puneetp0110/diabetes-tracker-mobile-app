@@ -136,11 +136,24 @@ android {
         }
     }
 }
+configurations.all {
+
+    resolutionStrategy {
+        force 'com.android.support:support-v4:27.0.1'
+        force 'org.webkit:android-jsc:r241213'
+        eachDependency {  details ->
+            if (details.requested.name == 'android-jsc') {
+                details.useTarget group: details.requested.group, name: 'android-jsc-intl', version: 'r241213'
+            }
+        }
+    }
+}
 
 dependencies {
+    implementation project(':react-native-login-with-amazon')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+    //implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }
 
