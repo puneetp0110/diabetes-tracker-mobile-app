@@ -6,7 +6,6 @@ import { getLoginState } from '../selectors';
 
 class LoginContainer extends Component {
     render() {
-        console.log(JSON.stringify(this.props))
         return <LoginView {...this.props} />;
     }
 }

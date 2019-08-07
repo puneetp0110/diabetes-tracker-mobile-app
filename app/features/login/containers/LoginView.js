@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Button, Text, TextInput } from 'react-native';
 import styles from './styles';
+import LoginWithAmazon from 'react-native-login-with-amazon';
 
 // import { navigateToHome } from 'app/navigation/NavigationHelpers';
 
@@ -23,8 +24,12 @@ export default class LoginView extends Component {
     */
     onPress = () => {
         // navigateToHome();
-        {this.ValidateEmail(this.state.username) ? this.props.onLogin(this.state.username, this.state.password):null}
-        console.log(this.state)
+        //{this.ValidateEmail(this.state.username) ? this.props.onLogin(this.state.username, this.state.password):null}
+        //console.log(this.state)
+        LoginWithAmazon.login((error, accessToken, profileData) => {
+            // ...
+        })
+        this.props.onLogin("", "")
     };
     /*
         This function is used to validate if email is valid.
