@@ -43,6 +43,7 @@
 		FE477C6D87434A8C9939ED42 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BA08495A7E4F38BD634A5F /* libRNGestureHandler-tvOS.a */; };
 		E1C381ABBE9C4661A72D98AA /* libRNLoginWithAmazon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93737FC9E5D94DACAD772A3A /* libRNLoginWithAmazon.a */; };
 		60656968A254413CA31DF577 /* libRNAvs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F40C7299699945DEAC227E34 /* libRNAvs.a */; };
+		6C10EC26E8C74778ADBB8050 /* libRNAWSCognito.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BCDEB50F3204D888CF02339 /* libRNAWSCognito.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +358,8 @@
 		93737FC9E5D94DACAD772A3A /* libRNLoginWithAmazon.a */ = {isa = PBXFileReference; name = "libRNLoginWithAmazon.a"; path = "libRNLoginWithAmazon.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		F1E83DEBA45E454FBECAC0B0 /* RNAvs.xcodeproj */ = {isa = PBXFileReference; name = "RNAvs.xcodeproj"; path = "../node_modules/react-native-avs/ios/RNAvs.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F40C7299699945DEAC227E34 /* libRNAvs.a */ = {isa = PBXFileReference; name = "libRNAvs.a"; path = "libRNAvs.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B05AC0563F4C492B80F5024C /* RNAWSCognito.xcodeproj */ = {isa = PBXFileReference; name = "RNAWSCognito.xcodeproj"; path = "../node_modules/amazon-cognito-identity-js/ios/RNAWSCognito.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		8BCDEB50F3204D888CF02339 /* libRNAWSCognito.a */ = {isa = PBXFileReference; name = "libRNAWSCognito.a"; path = "libRNAWSCognito.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,6 +391,7 @@
 				7DDBBB2F11654BE7B91C4D88 /* libRNGestureHandler.a in Frameworks */,
 				E1C381ABBE9C4661A72D98AA /* libRNLoginWithAmazon.a in Frameworks */,
 				60656968A254413CA31DF577 /* libRNAvs.a in Frameworks */,
+				6C10EC26E8C74778ADBB8050 /* libRNAWSCognito.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +585,7 @@
 				BE2C4220C53D4AE1A8075F05 /* RNGestureHandler.xcodeproj */,
 				2516FE8AC891480CB61A47C6 /* RNLoginWithAmazon.xcodeproj */,
 				F1E83DEBA45E454FBECAC0B0 /* RNAvs.xcodeproj */,
+				B05AC0563F4C492B80F5024C /* RNAWSCognito.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1212,12 +1217,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Debug;
@@ -1243,12 +1250,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Release;
@@ -1274,6 +1283,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Debug;
@@ -1298,6 +1308,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Release;
@@ -1331,12 +1342,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Debug;
@@ -1370,12 +1383,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Release;
@@ -1408,12 +1423,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Debug;
@@ -1446,12 +1463,14 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-login-with-amazon/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-avs/ios",
+					"$(SRCROOT)/../node_modules/amazon-cognito-identity-js/ios/**",
 				);
 			};
 			name = Release;

@@ -19,6 +19,12 @@ const styles = StyleSheet.create({
         alignItems: "stretch",
         margin:10,
         textAlign: "center"
+    },
+    SignupButton: {
+        color:"#841584",
+        alignItems: "stretch",
+        margin:10,
+        textAlign: "center"
     }
 });
 

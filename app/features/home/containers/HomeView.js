@@ -7,7 +7,8 @@ import {
     ScrollView,
     StyleSheet,
     Dimensions,
-    TouchableHighlight
+    TouchableHighlight,
+    TouchableOpacity
 } from 'react-native';
 import appConfig from '../../../config/appConfig';
 
@@ -30,17 +31,17 @@ class HomeView extends React.Component {
     render() {
         return (
             <KeyboardAvoidingView style={styles.container} behavior="padding">
-                <View style={styles.nav}/>
-                <Header title={appConfig.bot.name}/>
+                <View style={styles.nav} />
+                <Header title={appConfig.bot.name} />
                 <ScrollView>
                     <View style={styles.messageArea}>
                         {
                             this.state.messages.map((obj, key) => {
                                 console.log(this.state.messages);
                                 if (obj.userMessage) {
-                                    return <UserMessage message={obj.message} datetime={obj.datetime} key={key}/>
+                                    return <UserMessage message={obj.message} datetime={obj.datetime} key={key} />
                                 } else {
-                                    return <BotMessage message={obj.message} datetime={obj.datetime} key={key}/>
+                                    return <BotMessage message={obj.message} datetime={obj.datetime} key={key} />
                                 }
                             })
                         }
@@ -52,7 +53,7 @@ class HomeView extends React.Component {
                     blurOnSubmit={false}
                     onChangeText={(text) => {
                         let state = this.state;
-                        state.text = text;
+                        state.text = text.toLowerCase();
                         this.setState(state);
                     }}
                     value={this.state.text}
@@ -70,8 +71,13 @@ class HomeView extends React.Component {
                             state.text = "";
                             this.setState(state);
                         }
-                    }}
+                    }
+                    }
                 />
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => this.props.navigation.navigate('ShowBloodSugarHistory')}>
+                </TouchableOpacity>
             </KeyboardAvoidingView>
         );
     }
@@ -84,7 +90,7 @@ class HomeView extends React.Component {
             "secretAccessKey": appConfig.secretAccessKey,
             "region": appConfig.region
         };
-        AWS.config.update({region: 'us-east-1'});
+        AWS.config.update({ region: 'us-east-1' });
 
         let lexruntime = new AWS.LexRuntime({
             apiVersion: appConfig.apiVersion,
@@ -121,7 +127,7 @@ class HomeView extends React.Component {
     }
 }
 
-const BotMessage = ({message, datetime}) => {
+const BotMessage = ({ message, datetime }) => {
     return (
         <View style={styles.botMessage}>
             <View style={styles.botMessageBubble}>
@@ -132,7 +138,7 @@ const BotMessage = ({message, datetime}) => {
     );
 };
 
-const UserMessage = ({message, datetime}) => {
+const UserMessage = ({ message, datetime }) => {
     return (
         <View style={styles.userMessage}>
             <View style={styles.userMessageBubble}>
@@ -143,7 +149,7 @@ const UserMessage = ({message, datetime}) => {
     );
 };
 
-const Header = ({title, leftOnPress, rightOnPress}) => {
+const Header = ({ title, leftOnPress, rightOnPress }) => {
     return (
         <View style={{
             flexDirection: 'row',
@@ -191,7 +197,7 @@ const Header = ({title, leftOnPress, rightOnPress}) => {
                         rightOnPress();
                     }}
                     underlayColor='#000000'
-                    style={{flex: 0.1}}>
+                    style={{ flex: 0.1 }}>
                     <View
                         style={{
                             padding: 20

@@ -4,9 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "tsc": "tsc --project . --noEmit",
+    "lint": "eslint . && stylelint 'src/**/*.@(scss)'",
+    "ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "lintInit": "eslint --init"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "^3.0.12",
+    "aws-amplify": "1.1.11",
+    "aws-amplify-react-native": "^2.0.9",
+    "aws-sdk": "2.474.0",
     "react": "16.8.3",
     "react-native": "0.59.4",
     "react-native-gesture-handler": "^1.1.0",
@@ -23,15 +32,14 @@
     "@babel/core": "^7.4.3",
     "@babel/runtime": "^7.4.3",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.7.1",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.6.0",
-    "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.53.1",
     "prettier-eslint": "^8.8.2",
-    "react-test-renderer": "16.8.3",
-    "aws-sdk": "2.86.0"
+    "react-test-renderer": "16.8.3"
   },
   "jest": {
     "preset": "react-native"

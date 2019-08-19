@@ -73,7 +73,8 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    entryFile: "index.js"
+    entryFile: "index.js",
+    nodeExecutableAndArgs: ["node", "--max-old-space-size=8192"]
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -139,7 +140,6 @@ android {
 configurations.all {
 
     resolutionStrategy {
-        force 'com.android.support:support-v4:27.0.1'
         force 'org.webkit:android-jsc:r241213'
         eachDependency {  details ->
             if (details.requested.name == 'android-jsc') {
@@ -150,7 +150,7 @@ configurations.all {
 }
 
 dependencies {
-    implementation project(':react-native-login-with-amazon')
+    implementation project(':amazon-cognito-identity-js')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"

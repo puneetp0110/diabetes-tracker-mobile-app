@@ -17,7 +17,8 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        onLogin: (un, pwd) => dispatch(loginActions.requestLogin(un, pwd))
+        onLogin: (email, password) => dispatch(loginActions.requestLogin(email, password))
+        //onSignup: () => dispatch(loginActions.signUp())
     };
 }
 export default connect(

@@ -1,6 +1,6 @@
 const appConfig = {
-    "accessKeyId": "AKIASVYZBZXH3DEPMSMP",
-    "secretAccessKey": "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",
+    "accessKeyId": "AKIASVYZBZXHTW34RV25",
+    "secretAccessKey": "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",
     "region": "us-east-1",
     "apiVersion": "2016-11-28",
     "botAlias": "diabetesTracker",

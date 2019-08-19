@@ -3,10 +3,10 @@
  */
 import * as types from './actionTypes';
 
-export function requestLogin(username, password) {
+export function requestLogin(email, password) {
     return {
         type: types.LOGIN_REQUEST,
-        username,
+        email,
         password
     };
 }
@@ -34,4 +34,10 @@ export function disableLoader() {
     return {
         type: types.LOGIN_DISABLE_LOADER
     };
+}
+
+export function signUp() {
+    return {
+        type: types.SIGN_UP
+    }
 }

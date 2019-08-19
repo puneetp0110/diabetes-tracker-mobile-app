@@ -7,7 +7,7 @@ import * as types from './actionTypes';
 const initialState = {
     isLoggedIn: false,
     id: -1,
-    username: '',
+    email: '',
     password: ''
 };
 
@@ -15,7 +15,7 @@ export const loginReducer = createReducer(initialState, {
     [types.LOGIN_REQUEST](state, action) {
         return {
             ...state,
-            username: action.username,
+            email: action.email,
             password: action.password
         };
     },
@@ -33,5 +33,10 @@ export const loginReducer = createReducer(initialState, {
             ...state,
             isLoggedIn: false
         };
+    },
+    [this.SIGN_UP](state) {
+        return {
+            ...state
+        }
     }
 });

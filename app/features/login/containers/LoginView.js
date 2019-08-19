@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { View, Button, Text, TextInput } from 'react-native';
 import styles from './styles';
-import LoginWithAmazon from 'react-native-login-with-amazon';
-
-// import { navigateToHome } from 'app/navigation/NavigationHelpers';
 
 export default class LoginView extends Component {
     /*
@@ -13,24 +10,27 @@ export default class LoginView extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            email: "",
             password: ""
         }
+
         this.ValidateEmail.bind(this);
     }
     /*
         After validation if email is valid it will login using 
         AVS.
     */
-    onPress = () => {
+    onLogin = () => {
         // navigateToHome();
-        //{this.ValidateEmail(this.state.username) ? this.props.onLogin(this.state.username, this.state.password):null}
+        {this.ValidateEmail(this.state.email) ? this.props.onLogin(this.state.email, this.state.password):null}
         //console.log(this.state)
-        LoginWithAmazon.login((error, accessToken, profileData) => {
-            // ...
-        })
-        this.props.onLogin("", "")
+       
     };
+
+    onSignup = () => {
+        this.props.navigation.navigate("Signup");
+        //this.props.onSignup();
+    }
     /*
         This function is used to validate if email is valid.
         Valid email => Returns true 
@@ -51,17 +51,18 @@ export default class LoginView extends Component {
             onClick will be called when user click on login button
     */
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text style={styles.LoginLabel}>Username</Text>
+                <Text style={styles.LoginLabel}>Email</Text>
                 <TextInput
                     style={styles.LoginLabel}
                     onChangeText={(text) => {
                         this.setState({
-                            username: text
+                            email: text.toLowerCase()
                         })
                     }}
-                    value={this.state.username}
+                    value={this.state.email}
                 />
                 <Text style={styles.LoginLabel}>Password</Text>
                 <TextInput
@@ -75,11 +76,15 @@ export default class LoginView extends Component {
                     value={this.state.password}
                 />
                 <Button
-                    onPress={this.onPress}
+                    onPress={this.onLogin}
                     title="Login"
                     style={styles.LoginButton}
                 />
-                <Text>Status: {this.props.status}</Text>
+                <Button
+                    onPress={this.onSignup}
+                    title="Sign up"
+                    style={styles.SignupButton}
+                />
             </View>
         );
     }
