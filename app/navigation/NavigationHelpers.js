@@ -4,9 +4,12 @@
  * Avoid using this.props.navigation inside the code
  */
 import NavigationService from './NavigationService';
+import NavigationActions from 'react-navigation';
 
 export function navigateToHome(params) {
-    NavigationService.navigate('Home', params);
+    NavigationService.navigate('AuthenticatedStack', params);
+
+
 }
 
 export function navigateToSignup(params) {

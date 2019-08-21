@@ -1,4 +1,5 @@
 import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
+import React from 'react';
 import { View, Image } from 'react-native';
 import Images from 'app/images/index';
 import Login from 'app/features/login/containers/LoginContainer';

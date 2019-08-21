@@ -1,11 +1,8 @@
 /* Redux saga class
- * logins the user into the app
- * requires username and password.
  * un - username
- * pwd - password
  */
 import { put, call } from 'redux-saga/effects';
-import loginUser from 'app/api/methods/loginUser';
+import forgottenPassword from 'app/api/methods/loginUser';
 import * as loginActions from '../actions';
 import { navigateToHome, navigateToSignup } from '../../../navigation/NavigationHelpers';
 
@@ -14,14 +11,12 @@ export default function* loginAsync(action) {
     yield put(loginActions.enableLoader());
     //how to call api
     try {
-        const response = yield call(loginUser, action.email, action.password);
+        const response = yield call(forgottenPassword, action.email);
         //mock response
-        yield put(loginActions.onLoginResponse(response.data));
-        yield call(navigateToHome);
+        yield put(loginActions.onForgottenPasswordResponse(response.data));
     } catch (e) {
-        yield put(loginActions.loginFailed());
+        yield put(loginActions.fogottenPasswordFailed());
         yield put(loginActions.disableLoader({}));
-        yield call(navigateToHome);
     }
 }
 

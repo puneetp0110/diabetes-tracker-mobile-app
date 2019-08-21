@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Button, Text, TextInput } from 'react-native';
 import styles from './styles';
+import Modal from 'react-native-modal';
 
 export default class LoginView extends Component {
     /*
@@ -11,7 +12,8 @@ export default class LoginView extends Component {
         super(props);
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            forgottenPasswordModalVisible: false
         }
 
         this.ValidateEmail.bind(this);
@@ -22,14 +24,22 @@ export default class LoginView extends Component {
     */
     onLogin = () => {
         // navigateToHome();
-        {this.ValidateEmail(this.state.email) ? this.props.onLogin(this.state.email, this.state.password):null}
+        { this.ValidateEmail(this.state.email) ? this.props.onLogin(this.state.email, this.state.password) : null }
         //console.log(this.state)
-       
+
     };
 
     onSignup = () => {
         this.props.navigation.navigate("Signup");
-        //this.props.onSignup();
+    }
+
+    onForgottonPassword = () => {
+        this.setState({
+            forgottenPasswordModalVisible: true
+        })
+    }
+    onForget = () => {
+        { this.ValidateEmail(this.state.email) ? this.props.onForgottonPassword(this.state.email) : null }
     }
     /*
         This function is used to validate if email is valid.
@@ -51,9 +61,33 @@ export default class LoginView extends Component {
             onClick will be called when user click on login button
     */
     render() {
-        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
+                <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.forgottenPasswordModalVisible}
+                    onRequestClose={() => {
+                        this.setState({
+                            forgottenPasswordModalVisible: false
+                        })
+                    }}>
+                    <Text style={styles.ForgottenPasswordLabel}>Email</Text>
+                    <TextInput
+                        style={styles.ForgottenPasswordLabel}
+                        onChangeText={(text) => {
+                            this.setState({
+                                email: text.toLowerCase()
+                            })
+                        }}
+                        value={this.state.email}
+                    />
+                    <Button
+                        onPress={this.onForgottonPassword}
+                        title="Password Reset"
+                        style={styles.ForgottenPasswordButton}
+                    />
+                </Modal>
                 <Text style={styles.LoginLabel}>Email</Text>
                 <TextInput
                     style={styles.LoginLabel}
@@ -84,6 +118,11 @@ export default class LoginView extends Component {
                     onPress={this.onSignup}
                     title="Sign up"
                     style={styles.SignupButton}
+                />
+                <Button
+                    onPress={this.onForgottonPassword}
+                    title="Forgotton Password"
+                    style={styles.ForgottonPasswordButton}
                 />
             </View>
         );

@@ -41,3 +41,9 @@ export default (email, password) => {
     //     console.log(JSON.stringify(response));
     // })
 }
+
+export function forgottenPassword(email){
+    return Auth.forgotPassword(email)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+}

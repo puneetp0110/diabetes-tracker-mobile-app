@@ -25,6 +25,21 @@ const styles = StyleSheet.create({
         alignItems: "stretch",
         margin:10,
         textAlign: "center"
+    },
+    ForgottenPasswordButton: {
+        color:"#841584",
+        alignItems: "stretch",
+        margin:10,
+        textAlign: "center"
+    },
+    ForgottenPasswordLabel: {
+        borderColor: 'gray', 
+        borderWidth: 1, 
+        fontSize: 20, 
+        padding:4,
+        alignItems: "stretch",
+        margin:10,
+        textAlign:"center"
     }
 });
 

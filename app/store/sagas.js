@@ -4,7 +4,7 @@
  *
  */
 import { all } from 'redux-saga/effects';
-import { loginSagas } from 'app/features/login/sagas';
+import { loginSagas, forgottenPasswordSagas } from 'app/features/login/sagas';
 import { signupSagas } from '../features/signup/sagas';
 import { validationSagas } from '../features/validateemail/sagas';
 import { showBloodSugarSagas } from 'app/features/showbloodsugar/sagas';

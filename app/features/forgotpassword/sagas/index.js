@@ -6,7 +6,7 @@
  */
 import { takeEvery, takeLatest } from 'redux-saga/effects';
 import * as types from '../actionTypes';
-import loginAsync from './loginSaga';
-export const loginSagas = [takeEvery(types.LOGIN_REQUEST, loginAsync)];
+import showHistoryAsync from './showHistorySaga';
+export const showHistorySagas = [takeEvery(types.SHOW_HISTORY_REQUEST, showHistoryAsync)];
 
 //export const signupSagas = [takeEvery(types.SIGN_UP, signup)];

@@ -150,6 +150,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation project(':react-native-login-with-amazon')
     implementation project(':amazon-cognito-identity-js')
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])

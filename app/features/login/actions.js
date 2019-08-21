@@ -11,9 +11,29 @@ export function requestLogin(email, password) {
     };
 }
 
+export function requestForgottenPassword(email, password) {
+    return {
+        type: types.FORGOTTEN_PASSWORD_REQUEST,
+        email
+    };
+}
+
 export function loginFailed() {
     return {
         type: types.LOGIN_FAILED
+    };
+}
+
+export function forgottenPasswordFailed() {
+    return {
+        type: types.FORGOTTEN_PASSWORD_FAILED
+    };
+}
+
+export function onForgottenPasswordResponse(response) {
+    return {
+        type: types.FORGOTTEN_PASSWORD_RESPONSE,
+        response
     };
 }
 
@@ -36,8 +56,3 @@ export function disableLoader() {
     };
 }
 
-export function signUp() {
-    return {
-        type: types.SIGN_UP
-    }
-}
