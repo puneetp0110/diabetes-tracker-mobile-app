@@ -17,11 +17,10 @@ export default function* loginAsync(action) {
         const response = yield call(loginUser, action.email, action.password);
         //mock response
         yield put(loginActions.onLoginResponse(response.data));
-        yield call(navigateToHome);
+        response.success ? yield call(navigateToHome):null;
     } catch (e) {
         yield put(loginActions.loginFailed());
         yield put(loginActions.disableLoader({}));
-        yield call(navigateToHome);
     }
 }
 

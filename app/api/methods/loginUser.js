@@ -33,6 +33,7 @@ export default (email, password) => {
            if (err.message) { 
                alert(err.message)
            } else {
+               console.log(JSON.stringify(err))
                alert("Network Error");
            }
        }

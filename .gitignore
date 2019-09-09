@@ -1,3 +1,8 @@
+# local Config
+#
+app/config/
+
+
 # OSX
 #
 .DS_Store

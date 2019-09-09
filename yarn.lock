@@ -4684,6 +4684,11 @@ jsx-ast-utils@^2.1.0:
     array-includes "^3.0.3"
     object.assign "^4.1.0"
 
+jwt-decode@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-2.2.0.tgz#7d86bd56679f58ce6a84704a657dd392bba81a79"
+  integrity sha1-fYa9VmefWM5qhHBKZX3TkruoGnk=
+
 kind-of@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-1.1.0.tgz#140a3d2d41a36d2efcfa9377b62c24f8495a5c44"
@@ -6264,11 +6269,6 @@ react-native-gesture-handler@^1.1.0:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
-
-react-native-login-with-amazon@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/react-native-login-with-amazon/-/react-native-login-with-amazon-1.1.8.tgz#92e490400dccabcaed91448169612aee32d9c8ad"
-  integrity sha512-mi2JIWDbXevty5Sdj6qkkgk9QEvpD8m75jEQrkw/hak0e8YlfSTGlqVurFlGaPdPcF8KLx4o+JO5/wXIV0RZHQ==
 
 react-native-modal@^11.3.1:
   version "11.3.1"
