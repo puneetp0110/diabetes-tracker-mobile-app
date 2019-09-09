@@ -11,32 +11,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import appConfig from '../../../config/appConfig';
-import Amplify, { Auth, API } from "aws-amplify";
-import jwtDecode from "jwt-decode";
-// import { navigateToHome } from 'app/navigation/NavigationHelpers';
-
-Amplify.configure({
-    Auth: {
-
-        identityPoolId: 'us-east-1:139f9494-bace-4c7e-9ebb-4a44b6db06b6',
-
-        region: 'us-east-1',
-
-        userPoolId: 'us-east-1_HxySkakCG',
-
-        userPoolWebClientId: '6trbnh8259eeteo6rto3j1k58p',
-    },
-    API: {
-        endpoints: [
-            {
-                name: 'BloodSugar',
-                endpoint: 'https://yzx2uzulb0.execute-api.us-east-1.amazonaws.com/',
-                region: 'us-east-1'
-            }
-        ]
-    }
-
-});
 
 class HomeView extends React.Component {
 
@@ -110,23 +84,14 @@ class HomeView extends React.Component {
 
     sendMessage = (message) => {
         let AWS = require('aws-sdk/dist/aws-sdk-react-native');
-        // const tk = Auth.currentSession().then((res)=>{
-        //     return res.getIdToken().getJwtToken();
-        // })
-        // var decoded = jwtDecode(tk);
-        // console.log(JSON.stringify(decoded));
+
         AWS.config.credentials = {
             "accessKeyId": appConfig.accessKeyId,
             "secretAccessKey": appConfig.secretAccessKey,
             "region": appConfig.region
         };
-        // AWS.config.region = 'us-east-1'; // Region
-		// AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-		// // Provide your Pool Id here
-		// 	IdentityPoolId: 'us-east-1:139f9494-bace-4c7e-9ebb-4a44b6db06b6',
-		// });
         AWS.config.update({ region: 'us-east-1' });
-        var lexUserId = 'chatbot-demo' + Date.now();
+
         let lexruntime = new AWS.LexRuntime({
             apiVersion: appConfig.apiVersion,
         });
